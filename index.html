@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="assets/favicon.jpeg">
+  <title>Anime Website</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dark-mode">
+
+<header>
+  <h1>Anime Website</h1>
+  <nav>
+    <button class="nav-btn active" data-tab="home">Home</button>
+    <button class="nav-btn" data-tab="anime">Anime</button>
+    <button class="nav-btn" data-tab="englishAnime">English Anime</button>
+    <button class="nav-btn" data-tab="tamilAnime">Tamil Anime</button>
+    <button class="nav-btn" data-tab="myAnime">My Anime</button>
+    <button class="nav-btn" data-tab="manga">Manga</button>
+    <button class="nav-btn" data-tab="myManga">My Manga</button>
+    <button class="nav-btn" data-tab="movies">Movies</button>
+  </nav>
+  <div class="right-header" id="headerControls">
+    <input
+      id="searchBar"
+      type="text"
+      placeholder="Search anime or manga..."
+      autocomplete="off"
+    />
+    <button
+      id="themeToggleBtn"
+      title="Toggle dark/light mode"
+      aria-label="Toggle dark or light mode"
+    >🌙</button>
+    <button
+      id="logoutBtn"
+      title="Logout"
+      style="display:none; margin-left:10px; background:none; border:none; color:#fff; font-weight:600; cursor:pointer;"
+    >
+      Logout
+    </button>
+  </div>
+</header>
+
+<main>
+  <section id="loginSection" class="tab-content" style="display:none;">
+    <h2 class="section-title">Login</h2>
+    <form id="loginForm">
+      <label for="usernameInput">Please enter your name:</label><br />
+      <input
+        type="text"
+        id="usernameInput"
+        required
+        autocomplete="off"
+        placeholder="Your name"
+      /><br />
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <section id="homeSection" class="tab-content">
+    <h2 class="section-title"></h2>
+    <div class="welcome-msg">
+      <p>
+        Welcome,
+        <strong><span id="userNameDisplay">Guest</span></strong>!
+      </p>
+      <p>Discover trending anime and manga on this modern fan site.</p>
+      <p>Add shows to your favorites and explore episodes &amp; details anytime.</p>
+      <p>Click a tab to begin your anime adventure!</p>
+    </div>
+    <h3 class="section-title" style="margin-top:30px;">Favourite Anime</h3>
+    <div class="carousel" id="favouriteCarousel"></div>
+    <h3 class="section-title" style="margin-top:30px;">Favourite Manga</h3>
+    <div class="carousel" id="favouriteMangaCarousel"></div>
+  </section>
+
+  <section id="englishAnimeSection" class="tab-content" style="display:none;">
+    <h2 class="section-title">English Anime</h2>
+    <div class="carousel" id="englishAnimeCarousel"></div>
+  </section> 
+
+  <section id="tamilAnimeSection" class="tab-content" style="display:none;">
+    <h2 class="section-title">Tamil Anime</h2>
+    <div class="carousel" id="tamilAnimeCarousel"></div>
+  </section>
+
+
+  <section id="animeSection" class="tab-content" style="display:none;">
+    <h2 class="section-title">Anime</h2>
+    <div class="carousel" id="animeCarousel"></div>
+  </section>
+
+
+  <section id="myAnimeSection" class="tab-content" style="display:none;">
+    <h2 class="section-title">My Anime</h2>
+    <div class="carousel" id="myAnimeCarousel"></div>
+  </section>
+
+
+  <section id="mangaSection" class="tab-content" style="display:none;">
+    <h2 class="section-title">Manga</h2>
+    <div class="carousel" id="mangaCarousel"></div>
+  </section>
+
+  <section id="myMangaSection" class="tab-content" style="display:none;">
+    <h2 class="section-title">My Manga</h2>
+    <div class="carousel" id="myMangaCarousel"></div>
+  </section>
+
+  <section id="moviesSection" class="tab-content" style="display:none;">
+   <h2 class="section-title">Movies</h2>
+   <div class="carousel" id="moviesCarousel"></div>
+  </section>
+
+</main>
+
+<aside id="detailSidebar" aria-hidden="true" tabindex="-1">
+  <header>
+    <div id="detailTitle">Title</div>
+    <button id="closeDetailBtn" aria-label="Close Detail Sidebar">&times;</button>
+  </header>
+  <nav class="detail-tabs">
+    <button class="detail-tab-btn active" data-detail-tab="seasons">Seasons</button>
+    <button class="detail-tab-btn" data-detail-tab="movies">Movies</button>
+  </nav>
+  <div id="detailContent"></div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
